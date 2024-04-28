@@ -1,14 +1,15 @@
 ---
-publishDate: 2023-08-06T00:00:00Z
-title: How to customize AstroWind template to suit your branding
-excerpt: Personalize AstroWind template for your brand. Our guide unlocks seamless customization steps for a unique online presence.
+publishDate: 2023-08-12T00:00:00Z
+author: Lorem ipsum
+title: Lorem ipsum dolor sit amet
+excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 image: https://images.unsplash.com/photo-1546984575-757f4f7c13cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
+category: Tutorials
 tags:
-  - astro
-  - tailwind css
-  - theme
+  - asd
+  - fds
 metadata:
-  canonical: https://astrowind.vercel.app/how-to-customize-astrowind-to-your-brand
+  canonical: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css
 ---
 
 ## Congue justo vulputate nascetur convallis varius orci fringilla nulla pharetr
