@@ -1,13 +1,33 @@
 ---
 import Layout from '~/layouts/LandingLayout.astro';
 
-import Hero2 from '~/components/widgets/Hero2.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Headline from '~/components/ui/Headline.astro';
 import Header from '~/components/widgets/Header.astro';
 import { headerData } from '~/navigation';
 
+const pubs = [
+  {
+    title: 'SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models',
+    imageUrl: '/image.png',
+    author: 'Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, Jing Shao',
+    link: '/pubs/pub1',
+  },
+  {
+    title: 'SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models',
+    imageUrl: '/image.png',
+    author: 'Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, Jing Shao',
+    link: '/pubs/pub1',
+  },
+  {
+    title: 'SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models',
+    imageUrl: '/image.png',
+    author: 'Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, Jing Shao',
+    link: '/pubs/pub1',
+  },
+];
+
 const metadata = {
-  title: 'Sales Landing Page Demo',
+  title: 'Publication',
 };
 ---
 
@@ -17,9 +37,26 @@ const metadata = {
     <Header {...headerData} isSticky showToggleTheme />
   </Fragment>
 
-  <Hero2
-    tagline="Publication"
-    title="Publication"
-    subtitle="Dive deep into crafting a Landing Page that narrates, persuades, and converts."
-  />
+  <Headline title="Publication" />
+
+  <div class="flex flex-col gap-4 items-center">
+    {
+      pubs.map((pub) => (
+        <>
+          <a
+            href={pub.link}
+            class="bg-white p-4 rounded-lg shadow hover:bg-slate-50 transition-shadow max-w-4xl dark:bg-slate-900 dark:hover:bg-slate-800"
+          >
+            <div class="flex space-x-4">
+              <img src={pub.imageUrl} alt="LTR Image" class="w-80 rounded" />
+              <div>
+                <h3 class="text-lg font-semibold">{pub.title}</h3>
+                <p class="text-gray-600 mt-8">{pub.author}</p>
+              </div>
+            </div>
+          </a>
+        </>
+      ))
+    }
+  </div>
 </Layout>

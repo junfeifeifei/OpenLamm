@@ -1,0 +1,134 @@
+---
+import Layout from '~/layouts/LandingLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import { headerData } from '~/navigation';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Button from '~/components/ui/Button.astro';
+
+const metadata = {
+  title: 'Publication',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+  <Fragment slot="header">
+    <Header {...headerData} isSticky showToggleTheme />
+  </Fragment>
+
+  <Hero
+    tagline="Publication"
+    title="SALAD-Bench"
+    subtitle="A Hierarchical and Comprehensive Safety Benchmark for Large Language Models"
+    image={{
+      src: '~/assets/images/image.png',
+      alt: 'AstroWind Hero Image',
+    }}
+    ><Fragment slot="content">
+      <Button variant="tertiary" href={'https://arxiv.org/abs/2402.05044'} target="_blank">arXiv</Button>
+      <Button variant="tertiary" href={'https://github.com/OpenSafetyLab/SALAD-BENCH'} target="_blank">GitHub</Button>
+      <Button variant="tertiary" href={'https://www.bilibili.com/video/BV14z421X7dL/'} target="_blank">Bilibili</Button>
+      <Button variant="tertiary" href={'https://www.youtube.com/watch?v=2qZgRlnnYso'} target="_blank">YouTube</Button>
+      <Button variant="tertiary" href={'https://huggingface.co/datasets/OpenSafetyLab/Salad-Data'} target="_blank"
+        >Data</Button
+      >
+      <Button variant="tertiary" href={'https://huggingface.co/OpenSafetyLab/MD-Judge-v0.1'} target="_blank"
+        >MD-Judge</Button
+      >
+      <Button
+        variant="tertiary"
+        href={'https://huggingface.co/spaces/OpenSafetyLab/Salad-Bench-Leaderboard'}
+        target="_blank">Leaderboard</Button
+      ></Fragment
+    ></Hero
+  >
+  <!-- Content Widget **************** -->
+
+  <Content
+    items={[
+      {
+        title:
+          'A large-scale LLM safety evaluation with hierarchical taxonomy, including 6 domain-level categories, 16 task-level categories, and 65 detailed classes.',
+        icon: 'tabler:tools',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/image1.png',
+      alt: 'Startup Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl tracking-tight dark:text-white sm:text-3xl mb-2">
+        Compact Taxonomy with Hierarchical Levels
+      </h3>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    items={[
+      {
+        title:
+          'We propose the enhancement procedure to enhance the difficulty and complexity, including attack-enhanced subset, defense-enhanced subset, and multiple-choice questions subset.',
+        icon: 'tabler:tools',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/image2.png',
+      alt: 'Startup Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl tracking-tight dark:text-white sm:text-3xl mb-2">Enhanced Difficulty and Complexity</h3>
+    </Fragment>
+  </Content>
+  <Content
+    items={[
+      {
+        title:
+          'For QA pairs, we propose the MD-Judge, a fine-tuned LLM designed to assess question-answer pairs. And for MCQs, we propose the MCQ-Judge, which employs in-context learning and regex parsing to identify unsafe choices from the options provided.',
+        icon: 'tabler:tools',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/image3.png',
+      alt: 'Startup Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl tracking-tight dark:text-white sm:text-3xl mb-2">Reliable and Seamless Evaluator</h3>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Comprehensive evaluation for LLMs, attacking methods and defense methods.',
+        icon: 'tabler:tools',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/image4.png',
+      alt: 'Startup Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl tracking-tight dark:text-white sm:text-3xl mb-2">Joint-Purpose Utility</h3>
+    </Fragment>
+  </Content>
+  <Hero
+    title="Leaderboard"
+    image={{
+      src: '~/assets/images/image5.png',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+</Layout>
