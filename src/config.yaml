@@ -1,5 +1,5 @@
 site:
-  name: OpenTrustlab
+  name: OpenTrustLab
   site: 'https://OpenTrustlab.vercel.app'
   base: '/'
   trailingSlash: false
