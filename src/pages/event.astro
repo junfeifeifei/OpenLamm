@@ -5,9 +5,16 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Header from '~/components/widgets/Header.astro';
 import { headerData } from '~/navigation';
-
+import Event from '../components/Event.astro';
 const metadata = {
   title: 'Sales Landing Page Demo',
+};
+const paper = {
+  imageSrc: 'src/assets/images/mfm.png',
+  title: 'ICML MFM-EAI WorkShop',
+  time:'Fri26 Jul',
+  publication: 'ICML(International Conference on Machine Learning) 2024',
+  location:'Messe Wien Exhibition Congress Center, Vienna'
 };
 ---
 
@@ -17,9 +24,7 @@ const metadata = {
     <Header {...headerData} isSticky showToggleTheme />
   </Fragment>
 
-  <Hero2
-    tagline="Event"
-    title="Event"
-    subtitle="Dive deep into crafting a Landing Page that narrates, persuades, and converts."
-  />
+  <div style="display: flex;justify-content:center;margin:20px auto;">
+    <Event {...paper} />
+  </div>
 </Layout>

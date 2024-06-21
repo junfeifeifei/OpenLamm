@@ -5,9 +5,17 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Header from '~/components/widgets/Header.astro';
 import { headerData } from '~/navigation';
-
+import Headline from '~/components/ui/Headline.astro';
 const metadata = {
   title: 'Sales Landing Page Demo',
+};
+import Research from '../components/Research.astro';
+
+const paper = {
+  imageSrc: 'src/assets/images/research/MP5.png',
+  title: 'MPS: A Multi-modal Open-ended Embodied System in Minecraft via Active Perception',
+  authors: 'Yiran Qin, Enshen Zhou, Qichang Liu, Zhenfei Yin, Lu Sheng, Ruimao Zhang, Yu Qiao, Jing Shao',
+  publication: 'CVPR (IEEE Conference on Computer Vision and Pattern Recognition) 2024'
 };
 ---
 
@@ -16,10 +24,14 @@ const metadata = {
   <Fragment slot="header">
     <Header {...headerData} isSticky showToggleTheme />
   </Fragment>
-
-  <Hero2
-    tagline="Research"
-    title="Research"
-    subtitle="Dive deep into crafting a Landing Page that narrates, persuades, and converts."
-  />
+  <!-- <Headline
+  title={'Research'}
+  classes={{
+    title: 'text-3xl md:text-6xl',
+    container: 'pt-6 mb-0 md:mb-0',
+  }}
+/> -->
+<div style="display: flex;justify-content:center;margin:20px auto;">
+  <Research {...paper} />
+</div>
 </Layout>

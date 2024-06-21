@@ -27,219 +27,53 @@ const metadata = {
 
   <!-- Hero2 Widget ******************* -->
 
-  <Hero2
-    actions={[
-      { variant: 'primary', target: '_blank', text: 'View our work', href: '#' },
-      { text: 'Our Mission', href: '#' },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'AstroWind Hero Image',
-    }}
-  >
-    <Fragment slot="title">
-      Developing and understanding <span class="text-accent dark:text-white highlight"> responsible</span>
-      foundation models.
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-      aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-      enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-    </Fragment>
-  </Hero2>
-  <Note />
-
   <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    title="perspiciatis unde omnis "
-    subtitle="iste natus error sit voluptatem accusantium"
-    columns={2}
-    items={[
-      {
-        title: 'de Finibus Bonorum et Malorum',
-        description:
-          'maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum neces.',
-        icon: 'tabler:layers-union',
-      },
-      {
-        title: 'de Finibus Bonorum et Malorum',
-        description:
-          'maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum neces.',
-        icon: 'tabler:artboard',
-      },
-      {
-        title: 'de Finibus Bonorum et Malorum',
-        description:
-          'maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum neces.',
-        icon: 'tabler:writing',
-      },
-      {
-        title: 'de Finibus Bonorum et Malorum',
-        description:
-          'maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum neces.',
-        icon: 'tabler:podium',
-      },
-      {
-        title: 'de Finibus Bonorum et Malorum',
-        description:
-          'maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum neces.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'de Finibus Bonorum et Malorum',
-        description:
-          'maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum neces.',
-        icon: 'tabler:eyeglass',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment></Features
-  >
   <!-- Stats Widget ****************** -->
 
-  <Stats
-    title="Statistics"
-    stats={[
-      { amount: '170', title: 'AI safety researchers' },
-      {
-        amount: '200',
-        title: 'AI safety researchers',
-      },
-      { amount: '1850', title: 'AI safety researchers' },
-    ]}
-  />
 
   <!-- Content Widget **************** -->
-
-  <Content
-    title="Risks from AI"
-    items={[
-      {
-        title: 'Current AI Systems',
-        icon: 'tabler:tools',
-        description:
-          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
-      },
-      {
-        title: 'AI Safety',
-        icon: 'tabler:tools',
-        description: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
-      alt: 'Startup Image',
-    }}
-    callToAction={{ text: 'Learn More', variant: 'secondary' }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl tracking-tight dark:text-white sm:text-3xl mb-2">
-        Artificial Intelligence (AI) possesses the potential to benefit and advance society.
-      </h3>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
   <!-- Content Widget **************** -->
 
-  <Content
-    title="Our Research"
-    isReversed
-    items={[
-      {
-        title: 'Technical Research',
-        icon: 'tabler:tools',
-        description:
-          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
-      },
-      {
-        title: 'Conceptual Research',
-        icon: 'tabler:tools',
-        description: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
-      alt: 'Startup Image',
-    }}
-    callToAction={{ text: 'See our Research', variant: 'secondary' }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl tracking-tight dark:text-white sm:text-3xl mb-2">
-        We conduct impactful research aimed at improving the safety of AI systems.
-      </h3>
-    </Fragment>
-  </Content>
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
-    title="Frequently Asked Questions"
-    items={[
-      {
-        title: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-        description:
-          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-        description:
-          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-        description:
-          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-        description:
-          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-        icon: 'tabler:chevrons-right',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </FAQs>
-
   <!-- Steps2 Widget ****************** -->
+  <div style="width: 70%;margin:0 auto">
+    <img src="src/assets/images/bg.jpg"/>
+  </div>
+  <div class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row">
+        <!-- Left Section for 'Our Mission' -->
+        <div class="lg:w-1/2 p-4">
+          <h2 class="text-4xl font-bold text-gray-900">Our Mission</h2>
+          <p class="mt-4 text-lg text-gray-600">
+            LAMM (pronounced as /læm/, means cute lamb to show appreciation to LLaMA), is a growing open-source community aimed at helping researchers and developers quickly train and evaluate Multi-modal Large Language Models (MLLM), and further build multi-modal AI agents capable of bridging the gap between ideas and execution, enabling seamless interaction between humans and AI machines.
+          </p>
+          <p class="mt-4 text-lg text-gray-600">
+            As one of the very first open-source endeavors in the MLLM field, our goal is to create an ecosystem where every researcher and developer can apply, study, and even contribute. We work on various aspects including MLLM datasets, frameworks, benchmarks, optimizations, and applications as AI Agents. As a fully transparent open-source community, any form of collaboration is welcome!
+          </p>
+        </div>
 
-  <Steps2
-    title="Reach out to us"
-    subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
-    callToAction={{
-      text: 'Contact us',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Email us',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Call us',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Follow us',
-        description: '@example',
-        icon: 'tabler:brand-twitter',
-      },
-    ]}
-  />
+        <!-- Right Section for Questions -->
+        <div class="lg:w-1/2 p-4">
+          <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900">What is a foundation model?</h2>
+            <p class="mt-4 text-lg text-gray-600">
+              In recent years, a new successful paradigm for building AI systems has emerged: Train one model on a huge amount of data and adapt it to many applications. We call such a model a foundation model.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900">What is an embodied agent?</h2>
+            <p class="mt-4 text-lg text-gray-600">
+              In recent years, a new successful paradigm for building AI systems has emerged: Train one model on a huge amount of data and adapt it to many applications. We call such a model a foundation model.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- BlogLatestPost Widget **************** -->
 
