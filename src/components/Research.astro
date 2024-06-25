@@ -1,8 +1,14 @@
 ---
-const { imageSrc, title, authors, publication } = Astro.props;
+const { papers = [] } = Astro.props;
 ---
 
 <style>
+  .papers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .paper-card {
     border: 1px solid #d1d5db;
     border-radius: 8px;
@@ -11,6 +17,14 @@ const { imageSrc, title, authors, publication } = Astro.props;
     padding: 16px;
     max-width: 800px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .paper-card:hover {
+    border-color: #2563eb; /* 蓝色边框 */
+    cursor: pointer; /* 点击手势 */
   }
 
   .paper-image {
@@ -35,11 +49,15 @@ const { imageSrc, title, authors, publication } = Astro.props;
   }
 </style>
 
-<div class="paper-card">
-  <img src={imageSrc} alt="Paper Image" class="paper-image" />
-  <div class="paper-details">
-    <h2 class="paper-title">{title}</h2>
-    <p class="paper-authors">{authors}</p>
-    <p class="paper-publication">{publication}</p>
-  </div>
+<div class="papers-container">
+  {papers.map(paper => (
+    <a href={paper.link} class="paper-card" target="_blank" rel="noopener noreferrer">
+      <img src={paper.imageSrc} alt="Paper Image" class="paper-image" />
+      <div class="paper-details">
+        <h2 class="paper-title">{paper.title}</h2>
+        <p class="paper-authors">{paper.authors}</p>
+        <p class="paper-publication">{paper.publication}</p>
+      </div>
+    </a>
+  ))}
 </div>

@@ -11,12 +11,20 @@ const metadata = {
 };
 import Research from '../components/Research.astro';
 
-const paper = {
-  imageSrc: '/images/MP5.png',
-  title: 'MPS: A Multi-modal Open-ended Embodied System in Minecraft via Active Perception',
-  authors: 'Yiran Qin, Enshen Zhou, Qichang Liu, Zhenfei Yin, Lu Sheng, Ruimao Zhang, Yu Qiao, Jing Shao',
-  publication: 'CVPR (IEEE Conference on Computer Vision and Pattern Recognition) 2024'
-};
+const papers = [
+  {
+    imageSrc: '/images/MP5.png',
+    title: 'MPS: A Multi-modal Open-ended Embodied System in Minecraft via Active Perception',
+    authors: 'Yiran Qin, Enshen Zhou, Qichang Liu, Zhenfei Yin, Lu Sheng, Ruimao Zhang, Yu Qiao, Jing Shao',
+    publication: 'CVPR (IEEE Conference on Computer Vision and Pattern Recognition) 2024',
+  },
+  {
+    imageSrc: 'image2.jpg',
+    title: 'Paper Title 2',
+    authors: 'Author 3, Author 4',
+    publication: 'Publication 2',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -31,7 +39,7 @@ const paper = {
     container: 'pt-6 mb-0 md:mb-0',
   }}
 /> -->
-<div style="display: flex;justify-content:center;margin:20px auto;">
-  <Research {...paper} />
-</div>
+  <div style="display: flex;justify-content:center;margin:20px auto;">
+    <Research  papers={papers}/>
+  </div>
 </Layout>
