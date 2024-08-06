@@ -13,77 +13,86 @@ import Research from '../components/Research.astro';
 
 const papers2024 = [
   {
+    title: 'MP5: A Multi-modal Open-ended Embodied System in Minecraft via Active Perception',
+    imageSrc: '/images/MP5.png',
+    authors: 'Yiran Qin*, Enshen Zhou*, Qichang Liu*, Zhenfei Yin, Lu Sheng†, Ruimao Zhang†, Yu Qiao, Jing Shao‡',
+    publication: 'CVPR (The IEEE/CVF Conference on Computer Vision and Pattern Recognition), 2024',
+    link: 'https://iranqin.github.io/MP5.github.io/',
+    tags: ['Simulation', 'MineCraft', 'Planning', 'MLLM'],
+    time: 'Mon, 17 Jun 2024 18:57:37 UTC',
+  },
+  {
+    title: 'Octavius: Mitigating Task Interference in MLLMs via MoE',
+    imageSrc: '/images/Octavius_arch.png',
+    authors:
+      'Zeren Chen*, Ziqin Wang*, Zhen Wang*, Huayang Liu, Zhenfei Yin‡, Si Liu, Lu Sheng†, Wanli Ouyang, Yu Qiao, Jing Shao†',
+    publication: 'ICLR (The International Conference on Learning Representations), 2024',
+    link: 'https://arxiv.org/abs/2306.06687',
+    tags: ['MLLM', 'Training', '3D Vision'],
+    time: 'Mon, 17 Jun 2024 18:57:37 UTC',
+  },
+  {
     title:
-      'Assessment of Multimodal Large Language Models in Alignment with Human Values',
+      'From GPT-4 to Gemini and Beyond: Assessing the Landscape of MLLMs on Generalizability, Trustworthiness and Causality through Four Modalities',
+    imageSrc: '/images/MLLMs.png',
+    authors:
+      'Chaochao Lu, Chen Qian, Guodong Zheng, Hongxing Fan, Hongzhi Gao, Jie Zhang, Jing Shao†, Jingyi Deng, Jinlan Fu, Kexin Huang, Kunchang Li, Lijun Li, Limin Wang, Lu Sheng, Meiqi Chen, Ming Zhang, Qibing Ren, Sirui Chen, Tao Gui, Wanli Ouyang, Yali Wang, Yan Teng, Yaru Wang, Yi Wang, Yinan He, Yingchun Wang, Yixu Wang, Yongting Zhang, Yu Qiao†, Yujiong Shen, Yurong Mou, Yuxi Chen, Zaibin Zhang, Zhelun Shi, Zhenfei Yin‡, Zhipin Wang',
+    publication: 'Technical Report, 2024',
+    link: 'https://arxiv.org/abs/2401.15071',
+    tags: ['MLLM', 'Evaluation', 'Human Value', 'Causal Reasoning'],
+    time: 'Mon, 17 Jun 2024 18:57:37 UTC',
+  },
+  {
+    title: 'RH20T-P: A Primitive-Level Robotic Dataset Towards Composable Generalization Agents',
+    imageSrc: '/images/rh20t.png',
+    authors:
+      'Zeren Chen*, Zhelun Shi*, Xiaoya Lu*, Lehan He*, Sucheng Qian, Hao Shu Fang, Zhenfei Yin‡, Wanli Ouyang, Jing Shao†, Yu Qiao, Cewu Lu†, Lu Sheng†',
+    publication: 'Arxiv 2024',
+    link: 'https://sites.google.com/view/rh20t-primitive/main',
+    tags: ['Robot Arm', 'Manipulation', 'MLLM', 'Planning', 'Executing'],
+    time: 'Mon, 17 Jun 2024 18:57:37 UTC',
+  },
+  {
+    title: 'Assessment of Multimodal Large Language Models in Alignment with Human Values',
     imageSrc: '/images/ch3ef.png',
     authors:
-      'Zhelun Shi, Zhipin Wang, Hongxing Fan, Zaibin Zhang, Lijun Li, Yongting Zhang, Zhenfei Yin, Lu Sheng, Yu Qiao, Jing Shao',
+      'Zhelun Shi*, Zhipin Wang*, Hongxing Fan*, Zaibin Zhang, Lijun Li, Yongting Zhang, Zhenfei Yin, Lu Sheng†, Yu Qiao, Jing Shao†',
     publication: 'Arxiv 2024',
     link: 'https://openlamm.github.io/ch3ef/',
-    tags:['Language','Vision','Evaluation','Safety'],
-    time:'Tue, 26 Mar 2024 16:10:21 UTC'
+    tags: ['MLLM', 'Evaluation', 'Human Value'],
+    time: 'Mon, 17 Jun 2024 18:57:37 UTC',
   },
   {
-    imageSrc:'/images/tracing.png',
-    title:'Towards Tracing Trustworthiness Dynamics: Revisiting Pre-training Period of Large Language Models',
-    authors:'Chen Qian, Jie Zhang, Wei Yao, Dongrui Liu, Zhenfei Yin, Yu Qiao, Yong Liu, Jing Shao',
-    publication:'ACL(Annual Meeting of the Association for Computational Linguistics) 2024',
-    tags:['Language',"Interpretability",'Alignment'],
-    link:'https://chnq.github.io/TracingLLMWeb/',
-    time:'Thu, 29 Feb 2024 18:55:06 UTC '
-  },
-  {
-    imageSrc:'/images/saladbench.png',
-    title:'SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models',
-    authors:'Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, Jing Shao',
-    publication:'ACL(Annual Meeting of the Association for Computational Linguistics) 2024',
-    tags:['Language',"Evaluation",'Safety'],
-    link:'https://adwardlee.github.io/salad_bench/',
-    time:'Wed, 7 Feb 2024 17:33:54 UTC'
-  },
-  {
-    imageSrc:'/images/MLLMs.png',
-    title:'From GPT-4 to Gemini and Beyond',
-    authors:'Chaochao Lu, Chen Qian, Guodong Zheng, Hongxing Fan, Hongzhi Gao, Jie Zhang, Jing Shao, Jingyi Deng, Jinlan Fu, Kexin Huang, Kunchang Li, Lijun Li, Limin Wang, Lu Sheng, Meiqi Chen, Ming Zhang, Qibing Ren, Sirui Chen, Tao Gui, Wanli Ouyang, Yali Wang, Yan Teng, Yaru Wang, Yi Wang, Yinan He, Yingchun Wang, Yixu Wang, Yongting Zhang, Yu Qiao, Yujiong Shen, Yurong Mou, Yuxi Chen, Zaibin Zhang, Zhelun Shi, Zhenfei Yin, Zhipin Wang',
-    publication:'Technicle Report',
-    tags:['Language','Vision','Code',"Evaluation",'Safety','Casual Reasoning'],
-    link:'https://arxiv.org/abs/2401.15071',
-    time:'Fri, 26 Jan 2024 18:53:03 UTC'
-  },
-  {
-    imageSrc:'/images/psysafe.png',
-    title:'PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety',
-    authors:'Zaibin Zhang, Yongting Zhang, Lijun Li, Hongzhi Gao, Lijun Wang, Huchuan Lu, Feng Zhao, Yu Qiao, Jing Shao',
-    publication:'ACL(Annual Meeting of the Association for Computational Linguistics) 2024',
-    tags:['Language','Agent','Interpretability',"Alignment"],
-    link:'https://arxiv.org/abs/2401.11880',
-    time:'Mon, 22 Jan 2024 12:11:55 UTC'
+    title: 'MineDreamer: Learning to Follow Instructions via Chain-of-Imagination for Simulated-World Control',
+    imageSrc: '/images/mineDreamer.png',
+    authors: 'Enshen Zhou*, Yiran Qin*, Zhenfei Yin, Yuzhou Huang, Ruimao Zhang†, Lu Sheng†, Yu Qiao, Jing Shao‡',
+    publication: 'Arxiv 2024',
+    link: 'https://sites.google.com/view/minedreamer/main',
+    tags: ['Simulation', 'MineCraft', 'MLLM', 'World Model', 'Executing'],
+    time: 'Mon, 17 Jun 2024 18:57:37 UTC',
   },
 ];
-const papers2023=[
+const papers2023 = [
 {
-    title:
-      'ChEF: A Comprehensive Evaluation Framework for Standardized Assessment of Multimodal Large Language Models',
+    title: 'ChEF: A Comprehensive Evaluation Framework for Standardized Assessment of Multimodal Large Language Models',
     imageSrc: '/images/ChEF.png',
-    authors:
-      'Zhelun Shi*, Zhipin Wang*, Hongxing Fan*, Zhenfei Yin, Lu Sheng†, Yu Qiao, Jing Shao†',
+    authors: 'Zhelun Shi*, Zhipin Wang*, Hongxing Fan*, Zhenfei Yin, Lu Sheng†, Yu Qiao, Jing Shao†',
     publication: 'Arxiv, 2023',
     link: 'https://arxiv.org/abs/2306.06687',
-    tags:['Language','Vision','Evaluation'],
-    time:'Sun, 11 Jun 2023 14:01:17 UTC'
-  },
-  {
-    title:
-      'LAMM: Language-Assisted Multi-Modal Instruction-Tuning Dataset, Framework, and Benchmark',
+    tags: ['MLLM', 'Evaluation'],
+    time: 'Mon, 17 Jun 2024 18:57:37 UTC'
+},
+{
+    title: 'LAMM: Language-Assisted Multi-Modal Instruction-Tuning Dataset, Framework, and Benchmark',
     imageSrc: '/images/LAMM.png',
-    authors:
-      'Zhenfei Yin*, Jiong Wang*, JianJian Cao*, Zhelun Shi*,  Dingning Liu, Mukai Li, Lu Sheng, Lei Bai†, Xiaoshui Huang, Zhiyong Wang, Jing Shao†, Wanli Ouyang',
-    publication: 'NeurIPS(Conference on Neural Information Processing Systems), 2023, Datasets and Benchmarks Track',
+    authors: 'Zhenfei Yin*, Jiong Wang*, JianJian Cao*, Zhelun Shi*, Dingning Liu, Mukai Li, Lu Sheng, Lei Bai†, Xiaoshui Huang, Zhiyong Wang, Jing Shao†, Wanli Ouyang',
+    publication: 'NeurIPS (The Annual Conference on Neural Information Processing Systems), 2023',
     link: 'https://arxiv.org/abs/2306.06687',
-    tags:['Language','Vision','Evalutaion','Training'],
-    time:'Sun, 11 Jun 2023 14:01:17 UTC'
-  },
-]
+    tags: ['MLLM', 'Training', 'Evaluation', '3D Vision'],
+    time: 'Mon, 17 Jun 2024 18:57:37 UTC'
+}
+
+];
 ---
 
 <Layout metadata={metadata}>
@@ -93,13 +102,19 @@ const papers2023=[
 
   <div style="display: flex;">
     <!-- Navigation Sidebar -->
-    <div style="position: fixed; top: 60px; left: 0; width: 200px; height: calc(100vh - 60px); overflow-y: auto; padding: 20px; border-right: 1px solid #ccc;">
+    <div
+      style="position: fixed; top: 60px; left: 0; width: 200px; height: calc(100vh - 60px); overflow-y: auto; padding: 20px; border-right: 1px solid #ccc;"
+    >
       <ul style="list-style: none; padding: 0;">
         <li style="margin: 10px 0;">
-          <a href="#year2024" style="text-decoration: none; color: #000; font-size: 1.1em; transition: color 0.3s;">2024</a>
+          <a href="#year2024" style="text-decoration: none; color: #000; font-size: 1.1em; transition: color 0.3s;"
+            >2024</a
+          >
         </li>
         <li style="margin-bottom: 10px;">
-          <a href="#year2023" style="text-decoration: none; color: #000; font-size: 1.1em; transition: color 0.3s;">2023</a>
+          <a href="#year2023" style="text-decoration: none; color: #000; font-size: 1.1em; transition: color 0.3s;"
+            >2023</a
+          >
         </li>
       </ul>
     </div>

@@ -1,0 +1,39 @@
+---
+// src/components/Layout.astro
+const { title, children } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+  <div class="container">
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="/tutorial">Tutorial</a></li>
+          <li><a href="/tutorial/datasets">Datasets</a></li>
+          <li><a href="/tutorial/installation">Installation</a></li>
+          <li><a href="/tutorial/training">Training</a></li>
+          <li>
+            <a href="/tutorial/benchmark">Benchmark</a>
+            <ul>
+              <li><a href="/tutorial/benchmark/default">Default Benchmark</a></li>
+              <li><a href="/tutorial/benchmark/custom">Custom Benchmark</a></li>
+            </ul>
+          </li>
+          <li><a href="/tutorial/citations">Citations</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      {children}
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+---
+import '../../styles/descriptionSection.css';
+import { marked } from 'marked';
+export interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+const htmlText = marked.parse(text);
+---
+
+<div style="margin-top: 1em;">
+  <center>
+    <h2 class="title">Introduction</h2>
+  </center>
+  <div id="htmlText">
+    {htmlText}
+  </div>
+</div>
+<script>
+  let div = document.querySelector('#htmlText');
+  const htmlText = div.textContent;
+  div.innerHTML = htmlText;
+  console.log(htmlText);
+</script>

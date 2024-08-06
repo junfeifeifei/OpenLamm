@@ -14,13 +14,21 @@ export const headerData = {
       text: 'Events',
       href: getPermalink('/event'),
     },
+    // {
+    //   text: 'Blog',
+    //   href: getPermalink('/blog'),
+    // },
     {
-      text: 'Blog',
-      href: getPermalink('/blog'),
+      text:'Tutorial',
+      href:'/tutorial'
     },
+    // {
+    //   text: 'Dataset',
+    //   href: getPermalink('/data'),
+    // },
     {
       text:'Code',
-      href:''
+      href:'https://github.com/OpenGVLab/LAMM'
     }
     // {
     //   text: 'Homes',
