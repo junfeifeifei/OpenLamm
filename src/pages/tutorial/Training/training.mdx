@@ -2,103 +2,273 @@
 title: 'Training'
 sidebar_position: 4
 ---
+# <span style="font-size: 2.5rem; font-weight: bold; color: #333;">Training</span>
+<br />
+<div style="display: flex; flex-direction: row;">
+  <div style="flex: 3; padding-right: 20px;">
+    
+    <h2 id="prepare-required-checkpoints" style="font-size: 2rem; font-weight: bold;">Prepare Required Checkpoints</h2>
 
-## Prepare Required Checkpoints
+    <p style="font-size: 1.25rem;">
+      We provide pretrained weights of visual encoder and LLM. You can download them from the table below and place them in the <code>model_zoo</code> directory.
+    </p>
 
-We provide pretrained weights of visual encoder and LLM, you can download them from the Table and put them in `model_zoo` directory.
+    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.125rem;">
+      <thead>
+        <tr>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Model Name</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://github.com/lm-sys/FastChat/tree/main#vicuna-weights" style="color: #007bff; text-decoration: none; font-weight: 500;">Link</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">clip-vit-large-patch14-336</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openai/clip-vit-large-patch14-336" style="color: #007bff; text-decoration: none; font-weight: 500;">Link</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">epcl_vit-L_256tokens</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/epcl_vit-L_256tokens" style="color: #007bff; text-decoration: none; font-weight: 500;">Link</a></td>
+        </tr>
+      </tbody>
+    </table>
 
-|  Model Name  | Link  |  
-|  ----------  | ----  |   
-|  Vicuna      | [Link](https://github.com/lm-sys/FastChat/tree/main#vicuna-weights)  | 
-| clip-vit-large-patch14-336  | [Link](https://huggingface.co/openai/clip-vit-large-patch14-336) | 
-| epcl_vit-L_256tokens        | [Link](https://huggingface.co/openlamm/epcl_vit-L_256tokens)     |
+    <p style="font-size: 1.25rem; margin-top: 2rem;">
+      Organize the pretrained weights as below:
+    </p>
 
-Organize the pretrained weights as below:
-
-```
+    <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 16px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 1.125rem;">
+      <pre style="margin: 0;">
 model_zoo
 ├── vicuna_ckpt
 │   ├── 13b_v0          
 │   └── 7b_v0
 └── epcl_vit-L_256tokens
-```
+      </pre>
+    </div>
 
-## LAMM
+    <h2 id="lamm" style="font-size: 2rem; font-weight: bold; margin-top: 2rem;">LAMM</h2>
 
-- 2D Models Training
-    
-    ```bash
-    cd src
-    sh tools/LAMM/train_lamm2d.sh lamm_2d
-    # or
-    sh tools/LAMM/train_lamm2d_slurm.sh <YOUR_PARTITION> lamm_2d
-    ```
+    <ul style="list-style-type: disc; margin-left: 1.5rem;">
+      <li style="margin-bottom: 1rem;">
+        <strong>2D Models Training</strong>
+        <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 16px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 1.125rem;">
+          <pre style="margin: 0;">
+cd src
+sh tools/LAMM/train_lamm2d.sh lamm_2d
+# or
+sh tools/LAMM/train_lamm2d_slurm.sh &lt;YOUR_PARTITION&gt; lamm_2d
+          </pre>
+        </div>
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <strong>3D Models Training</strong>
+        <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 16px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 1.125rem;">
+          <pre style="margin: 0;">
+cd src
+sh tools/LAMM/train_lamm3d.sh lamm_3d
+# or
+sh tools/LAMM/train_lamm3d_slurm.sh &lt;YOUR_PARTITION&gt; lamm_3d
+          </pre>
+        </div>
+      </li>
+    </ul>
 
-- 3D Models Training
+    <p style="font-size: 1.25rem; margin-top: 2rem;">
+      For your reference, GPU memory consumption for different models is shown as follows:
+    </p>
 
-    ```bash
-    cd src
-    sh tools/LAMM/train_lamm3d.sh lamm_3d
-    # or
-    sh tools/LAMM/train_lamm3d_slurm.sh <YOUR_PARTITION> lamm_3d
-    ```
+    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.125rem;">
+      <thead>
+        <tr>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Model Size</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Sample Num/GPU</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">GPU Memory</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_7B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">1</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">~30GB</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_7B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">2</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">~46GB</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_13B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">1</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">~53GB</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_13B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">2</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">~70GB</td>
+        </tr>
+      </tbody>
+    </table>
 
-For your reference, GPU memory consumption for different models are shown as follows
+    <h2 id="octavius" style="font-size: 2rem; font-weight: bold; margin-top: 2rem;">Octavius</h2>
 
-| Model Size | Sample Num/GPU | GPU Memory | 
-| :----------: | :---------------------: | :------------------: |
-|Vicuna_v0_7B | 1 | ~30GB |
-|Vicuna_v0_7B | 2 | ~46GB |
-|Vicuna_v0_13B | 1 | ~53GB |
-|Vicuna_v0_13B | 2 | ~70GB |
+    <ul style="list-style-type: disc; margin-left: 1.5rem;">
+      <li style="margin-bottom: 1rem;">
+        <strong>Image modality only</strong>
+        <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 16px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 1.125rem;">
+          <pre style="margin: 0;">
+cd src
+sh tools/Octavius/train_octavius_slurm.sh &lt;YOUR_PARTITION&gt; &lt;NUM_GPU&gt; \
+    config/Octavius/octavius_2d_e4_bs64.yaml octavius_2d_e4_bs64
+          </pre>
+        </div>
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <strong>Point cloud modality only</strong>
+        <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 16px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 1.125rem;">
+          <pre style="margin: 0;">
+cd src
+sh tools/Octavius/train_octavius_slurm.sh &lt;YOUR_PARTITION&gt; &lt;NUM_GPU&gt; \
+    config/Octavius/octavius_3d_e3_bs64.yaml octavius_3d_e3_bs64
+          </pre>
+        </div>
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <strong>Image & point cloud modality joint</strong>
+        <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 16px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 1.125rem;">
+          <pre style="margin: 0;">
+cd src
+sh tools/Octavius/train_octavius_slurm.sh &lt;YOUR_PARTITION&gt; &lt;NUM_GPU&gt; \
+    config/Octavius/octavius_2d+3d_e6_bs64.yaml octavius_2d+3d_e6_bs64
+          </pre>
+        </div>
+      </li>
+    </ul>
 
-## Octavius
+    <h2 id="model-zoo" style="font-size: 2rem; font-weight: bold; margin-top: 2rem;">Model Zoo</h2>
 
-- Image modality only
+    <p style="font-size: 1.25rem; margin-top: 1.5rem;">
+      We provide several pretrained LAMM/Octavius checkpoints here:
+    </p>
 
-    ```bash
-    cd src
-    sh tools/Octavius/train_octavius_slurm.sh <YOUR_PARTITION> <NUM_GPU> \
-        config/Octavius/octavius_2d_e4_bs64.yaml octavius_2d_e4_bs64
-    ```
+    <h3 id="lamm-model-zoo" style="font-size: 1.5rem; font-weight: bold; margin-top: 1.5rem;">LAMM Model Zoo</h3>
 
-- Point cloud modality only
+    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.125rem;">
+      <thead>
+        <tr>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;"># Training Samples</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Vision Encoder</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">LLM</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Training Data</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Lora Rank</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">98K</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">CLIP-ViT-L</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_7B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LAMM-2D daily dialogue & description</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">32</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/lamm_7b_lora32_98k" style="color: #007bff; text-decoration: none; font-weight: 500;">Checkpoints</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">186K</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">CLIP-ViT-L</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_7B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LAMM-2D Instruction Data</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">32</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/lamm_7b_lora32_186k" style="color: #007bff; text-decoration: none; font-weight: 500;">Checkpoints</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">186K</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">CLIP-ViT-L</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LLaMA2_chat_7B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LAMM-2D Instruction Data</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">32</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/lamm186k_llama2chat7b_lora32" style="color: #007bff; text-decoration: none; font-weight: 500;">Checkpoints</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">98K</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">CLIP-ViT-L</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_13B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LAMM-2D daily dialogue & description</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">32</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/lamm_13b_lora32_98k" style="color: #007bff; text-decoration: none; font-weight: 500;">Checkpoints</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">186K</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">CLIP-ViT-L</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_13B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LAMM-2D Instruction Data</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">32</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/lamm_13b_lora_186k" style="color: #007bff; text-decoration: none; font-weight: 500;">Checkpoints</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">10K</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">EPCL-ViT-L</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_13B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LAMM-3D Instruction Data</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">32</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/lamm3d_13b_lora32_10k" style="color: #007bff; text-decoration: none; font-weight: 500;">Checkpoints</a></td>
+        </tr>
+      </tbody>
+    </table>
 
-    ```bash
-    cd src
-    sh tools/Octavius/train_octavius_slurm.sh <YOUR_PARTITION> <NUM_GPU> \
-        config/Octavius/octavius_3d_e3_bs64.yaml octavius_3d_e3_bs64
-    ```
+    <h3 id="octavius-model-zoo" style="font-size: 1.5rem; font-weight: bold; margin-top: 1.5rem;">Octavius Model Zoo</h3>
 
-- Image & point cloud modality joint
+    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.125rem;">
+      <thead>
+        <tr>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">#Samples</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Vision Encoder</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">LLM</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Training Data</th>
+          <th style="border-bottom: 1px solid #ddd; padding: 12px; text-align: left; color: #666; font-weight: 600;">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">286K</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">CLIP-ViT-L</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_13B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LAMM-2D Instruction Data & COCO-Detection</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/octavius/blob/main/octavius_2d_e4_bs64.pt" style="color: #007bff; text-decoration: none; font-weight: 500;">ckpt</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">90K</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Obj-As-Scene</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Vicuna_v0_13B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">Scan2Inst</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/octavius/blob/main/octavius_3d_e3_bs64.pt" style="color: #007bff; text-decoration: none; font-weight: 500;">ckpt</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">376K</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">CLIP-ViT-L & Obj-As-Scene</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LLaMA2_chat_13B</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;">LAMM-2D Instruction Data & COCO-Detection & Scan2Inst</td>
+          <td style="padding: 12px; border-bottom: 1px solid #ddd;"><a href="https://huggingface.co/openlamm/octavius/blob/main/octavius_2d%2B3d_e6_bs64.pt" style="color: #007bff; text-decoration: none; font-weight: 500;">ckpt</a></td>
+        </tr>
+      </tbody>
+    </table>
 
-    ```bash
-    cd src
-    sh tools/Octavius/train_octavius_slurm.sh <YOUR_PARTITION> <NUM_GPU> \
-        config/Octavius/octavius_2d+3d_e6_bs64.yaml octavius_2d+3d_e6_bs64
-    ```
-
-## Model Zoo
-
-We provide several pretrained LAMM/Octavius checkpoints here:
-
-### LAMM Model Zoo
-
-| # Training Samples  | Vision Encoder | LLM | Training Data | Lora Rank | Link |
-| -------------------------- | :--------: | :--------: | -------- | :----: | :---------------: |
-| 98K  | CLIP-ViT-L | Vicuna_v0_7B            | LAMM-2D daily dialogue & desctiption | 32 | [Checkpoints](https://huggingface.co/openlamm/lamm_7b_lora32_98k) |
-| 186K  | CLIP-ViT-L | Vicuna_v0_7B            | LAMM-2D Instruction Data | 32 | [Checkpoints](https://huggingface.co/openlamm/lamm_7b_lora32_186k) |
-| 186K | CLIP-ViT-L |  LLaMA2_chat_7B           | LAMM-2D Instruction Data | 32 | [Checkpoints](https://huggingface.co/openlamm/lamm186k_llama2chat7b_lora32) |
-| 98K | CLIP-ViT-L | Vicuna_v0_13B           | LAMM-2D daily dialogue & desctiption | 32 | [Checkpoints](https://huggingface.co/openlamm/lamm_13b_lora32_98k) |
-| 186K | CLIP-ViT-L |  Vicuna_v0_13B           | LAMM-2D Instruction Data | 32 | [Checkpoints](https://huggingface.co/openlamm/lamm_13b_lora_186k) |
-| 10K | EPCL-ViT-L |  Vicuna_v0_13B           | LAMM-3D Instruction Data | 32 | [Checkpoints](https://huggingface.co/openlamm/lamm3d_13b_lora32_10k) |
-
-### Octavius Model Zoo
-
-| #Samples |                                Vision Encoder                                |      LLM       |            Training Data             |                                    Link                                     |
-| :------: | :-------------------------------------------------------------------------- | :------------ | :--------------------------------- | :-------------------------------------------------------------------------: |
-|   286k    |                                  CLIP-ViT-L                                  |  Vicuna_v0_13B  | LAMM-2D Instruction Data & COCO-Detection |  [ckpt](https://huggingface.co/openlamm/octavius/blob/main/octavius_2d_e4_bs64.pt)      |
-|   90k   |                                 Obj-As-Scene                                 |  Vicuna_v0_13B  |       Scan2Inst       |  [ckpt](https://huggingface.co/openlamm/octavius/blob/main/octavius_3d_e3_bs64.pt)      |
-|   376K   |                                  CLIP-ViT-L & <br/> Obj-As-Scene                   | LLaMA2_chat_13B |       LAMM-2D Instruction Data & COCO-Detection & <br/> Scan2Inst       |  [ckpt](https://huggingface.co/openlamm/octavius/blob/main/octavius_2d%2B3d_e6_bs64.pt) |
-
-You can download them and put them into `ckpt` directory for fast evaluation.
+    <p style="font-size: 1.25rem; margin-top: 2rem;">
+      You can download them and put them into the <code>ckpt</code> directory for fast evaluation.
+    </p>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+    <div style="position: sticky; top: 100px;">
+      <a href="#prepare-required-checkpoints" style="display: block; margin-bottom: 8px; color: #007bff; text-decoration: none;">Prepare Required Checkpoints</a>
+      <a href="#lamm" style="display: block; margin-bottom: 8px; color: #007bff; text-decoration: none;">LAMM</a>
+      <a href="#octavius" style="display: block; margin-bottom: 8px; color: #007bff; text-decoration: none;">Octavius</a>
+      <a href="#model-zoo" style="display: block; margin-bottom: 8px; color: #007bff; text-decoration: none;">Model Zoo</a>
+      <a href="#lamm-model-zoo" style="display: block; margin-bottom: 8px; color: #007bff; text-decoration: none;">LAMM Model Zoo</a>
+      <a href="#octavius-model-zoo" style="display: block; margin-bottom: 8px; color: #007bff; text-decoration: none;">Octavius Model Zoo</a>
+    </div>
+  </div>
+  
+</div>

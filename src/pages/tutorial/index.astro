@@ -1,9 +1,16 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
-import { headerData } from '~/navigation';
 import TutorialContent from './tutorial.mdx';
-
+import TrainingContent from './Training/training.mdx';
+import InstallationContent from './installation/installation.mdx';
+import DatasetsContent from './Datasets/datasets.mdx';
+import BenchMarkContent from './Datasets/benchmark.mdx';
+import InstructionContent from './Datasets/instruction.mdx';
+import CitationsContent from './citations/citations.mdx';
+import DefaultContent from './Benchmark/default.mdx';
+import CustomContent from './Benchmark/custom.mdx';
+import Layout from '~/layouts/PageLayout.astro';
+import { headerData } from '~/navigation';
 const metadata = {
   title: 'Tutorial',
 };
@@ -16,30 +23,138 @@ const metadata = {
 
   <div class="flex flex-row min-h-screen">
     <!-- Sidebar -->
-    <div class="w-1/5 dark:bg-gray-800 p-4 border-r border-gray-300 dark:border-gray-600">
+    <div class="w-1/5 dark:bg-gray-800 p-4 border-r border-gray-300 dark:border-gray-600 sticky top-[4rem] h-[calc(100vh-4rem)]">
       <h2 class="block mb-4 text-gray-700 dark:text-gray-300">Tutorial</h2>
       <ul class="space-y-2">
-        <li class="relative">
-          <input type="checkbox" id="datasets-toggle" class="hidden peer">
+        <!-- Tutorial Main -->
+        <li>
+          <a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700" onClick="showContent('tutorial')">
+            Tutorial Overview
+          </a>
+        </li>
+
+        <!-- Datasets -->
+        <li>
+          <input type="checkbox" id="datasets-toggle" class="hidden peer" />
           <label for="datasets-toggle" class="block py-2 px-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-between">
             Datasets
             <svg class="w-4 h-4 transition-transform transform peer-checked:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </label>
           <ul class="ml-4 hidden peer-checked:block border-l border-gray-300 dark:border-gray-600">
-            <li><a href="#instruction-tuning" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700">Instruction Tuning</a></li>
-            <li><a href="#benchmarking" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700">Benchmarking</a></li>
+            <li>
+              <a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700" onClick="showContent('instruction')">
+                Instruction Tuning
+              </a>
+            </li>
+            <li>
+              <a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700" onClick="showContent('benchmarking')">
+                Benchmarking
+              </a>
+            </li>
           </ul>
         </li>
-        <li><a href="#installation" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700">Installation</a></li>
-        <li><a href="#training" class="block py-2 px-4 bg-blue-100 text-blue-600">Training</a></li>
-        <li><a href="#benchmark" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700">Benchmark</a></li>
-        <li><a href="#citation" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700">Citation</a></li>
+
+        <!-- Installation -->
+        <li>
+          <a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700" onClick="showContent('installation')">
+            Installation
+          </a>
+        </li>
+
+        <!-- Training -->
+        <li>
+          <a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700" onClick="showContent('training')">
+            Training
+          </a>
+        </li>
+
+        <!-- Benchmark -->
+        <li>
+          <input type="checkbox" id="benchmark-toggle" class="hidden peer" />
+          <label for="benchmark-toggle" class="block py-2 px-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-between">
+            Benchmark
+            <svg class="w-4 h-4 transition-transform transform peer-checked:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </label>
+          <ul class="ml-4 hidden peer-checked:block border-l border-gray-300 dark:border-gray-600">
+            <li>
+              <a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700" onClick="showContent('defaultBenchmark')">
+                Default Benchmark
+              </a>
+            </li>
+            <li>
+              <a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700" onClick="showContent('customBenchmark')">
+                Custom Benchmark
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Citation -->
+        <li>
+          <a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700" onClick="showContent('citation')">
+            Citation
+          </a>
+        </li>
       </ul>
     </div>
 
     <!-- Main Content -->
-    <div class="w-3/4 p-8">
-      <TutorialContent />
+    <div class="w-4/5 p-8">
+      <div id="content-tutorial" class="content-section">
+        <TutorialContent />
+      </div>
+      <div id="content-training" class="content-section hidden">
+        <TrainingContent />
+      </div>
+      <div id="content-instruction" class="content-section hidden">
+        <InstructionContent />
+      </div>
+      <div id="content-benchmarking" class="content-section hidden">
+        <BenchMarkContent />
+      </div>
+      <div id="content-installation" class="content-section hidden">
+        <InstallationContent />
+      </div>
+      <div id="content-defaultBenchmark" class="content-section hidden">
+        <DefaultContent />
+      </div>
+      <div id="content-customBenchmark" class="content-section hidden">
+        <CustomContent />
+      </div>
+      <div id="content-citation" class="content-section hidden">
+        <CitationsContent />
+      </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      function showContent(section) {
+        // Prevent the default link action
+        event.preventDefault();
+
+        // Hide all content sections
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach((section) => section.classList.add('hidden'));
+
+        // Show the selected content section
+        document.getElementById(`content-${section}`).classList.remove('hidden');
+
+        // Remove the active class from all links
+        const links = document.querySelectorAll('a');
+        links.forEach((link) => link.classList.remove('bg-blue-100', 'text-blue-600'));
+
+        // Add the active class to the clicked link
+        event.target.classList.add('bg-blue-100', 'text-blue-600');
+      }
+
+      window.showContent = showContent;
+    });
+  </script>
+
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 </Layout>
